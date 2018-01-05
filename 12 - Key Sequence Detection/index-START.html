@@ -7,6 +7,16 @@
 </head>
 <body>
 <script>
+  const pushed = [];
+  const secret = 'casey';
+  window.addEventListener('keyup', (e) => {
+    pushed.push(e.key);
+    pushed.splice(-secret.length - 1, pushed.length - secret.length);
+    console.log(pushed);
+    if (pushed.join('').includes(secret)) {
+      cornify_add();
+    }
+  })
 </script>
 </body>
 </html>
